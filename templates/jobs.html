@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>AI Job Portal</h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/add-job">Add Job</a>
+            
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-card" style="width:800px;">
+            <h2>Available Jobs</h2>
+            <form method="GET" action="/jobs">
+    <input type="text" name="search" placeholder="Search jobs..." required>
+    <button type="submit">Search</button>
+    <a href="/jobs">Show All Jobs</a>
+</form>
+
+<br>
+
+            <table border="1" width="100%" cellpadding="10">
+                <tr>
+                    <th>ID</th>
+                    <th>Job Title</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Salary</th>
+                    <th>Action</th>
+                </tr>
+
+               {% for job in jobs %}
+<tr>
+    <td>{{ job[0] }}</td>
+    <td>{{ job[1] }}</td>
+    <td>{{ job[2] }}</td>
+    <td>{{ job[3] }}</td>
+    <td>{{ job[4] }}</td>
+
+    <td>
+    <a href="/delete-job/{{ job[0] }}" onclick="return confirm('Are you sure?')">
+        Delete
+        <td>
+    <a href="/edit-job/{{ job[0] }}">Edit</a> |
+    <a href="/delete-job/{{ job[0] }}"
+       onclick="return confirm('Are you sure?')">
+       Delete
+    </a>
+</td>
+    </a>
+</td>
+</tr>
+{% endfor %}
+            </table>
+
+        </div>
+    </div>
+
+</body>
+</html>

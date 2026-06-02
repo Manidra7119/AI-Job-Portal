@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>AI Job Portal</h2>
+</div>
+
+<div class="form-container">
+    <div class="form-card">
+        <h2>Add Job</h2>
+
+        <form method="POST" action="/add-job">
+
+            <input type="text" name="job_title" placeholder="Job Title" required>
+
+            <input type="text" name="company_name" placeholder="Company Name" required>
+
+            <input type="text" name="location" placeholder="Location" required>
+
+            <input type="text" name="salary" placeholder="Salary" required>
+
+            <button type="submit">Add Job</button>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

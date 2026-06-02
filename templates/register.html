@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - AI Job Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>AI Job Portal</h2>
+        <div>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="form-card">
+            <h2>Create Account</h2>
+            <p>Register to start your job search.</p>
+
+            <form method="POST" action="/register">
+
+    <input type="text" name="fullname" placeholder="Full Name" required>
+
+    <input type="email" name="email" placeholder="Enter Email" required>
+
+    <input type="password" name="password" placeholder="Create Password" required>
+
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+    <button type="submit">Register</button>
+
+</form>
+
+            <p class="small-text">Already have an account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
